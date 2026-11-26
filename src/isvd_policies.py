@@ -1,8 +1,8 @@
 """Refresh policies: periodic and bound-triggered (paper Sec. 2.6, eq. 16).
 
-Context7 was queried for `ruptures` (changepoint detection) as a candidate
-for a "when should the model be refreshed" decision rule; it detects
-changepoints in an existing series and does not implement the paper's O(1)
+`ruptures` (changepoint detection) was considered as a candidate for a
+"when should the model be refreshed" decision rule; it detects changepoints
+in an existing series and does not implement the paper's O(1)
 bound-triggered refresh test, so these two policies are a custom
 implementation of the paper's rules.
 """

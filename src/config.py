@@ -74,7 +74,7 @@ EXP5_TRUNCATION_RANK = 5
 EXP5_PERIODIC_REFRESH = 1000           # T_refresh = 1000 (Sec. 4.5)
 EXP5_BOUND_TAUS = (0.4, 0.2, 0.1, 0.05)  # bound-triggered tolerances tau (Sec. 4.5, eq. 16)
 EXP5_LOG_EVERY = 20
-EXP5_TOL = 1e-10                       # residual-norm tolerance (implementation notes, Sec. 2)
+EXP5_TOL = 1e-10                       # residual-norm tolerance (Sec. 2, numerical tolerance)
 
 # ---------------------------------------------------------------------------
 # Experiment 6: runtime scaling with matrix size and truncation rank (Sec. 4.6/4.2)
@@ -93,7 +93,7 @@ EXP6_TIMING_RUNS = 5                    # median over 5 runs (Sec. 4.2/4.6)
 # ---------------------------------------------------------------------------
 # ETF universe: the 60 tickers of the paper's Section 5 panel, taken from the
 # authors' data-preparation script experiments/prepare_etf_data.py (the paper
-# text does not print the ticker list, Sec. 5, data_requirements).
+# text does not print the ticker list, Sec. 5).
 EXP7_TICKERS = [
     # Broad US equity / style (authors' experiments/prepare_etf_data.py)
     "SPY", "IVV", "VTI", "QQQ", "DIA", "IWM", "IWN", "IWO", "VTV", "VUG",
@@ -108,8 +108,8 @@ EXP7_TICKERS = [
     "GLD", "SLV", "GDX", "GDXJ", "USO", "DBC", "DBA", "VNQ", "IYR", "XME",
     "XOP", "KRE", "SMH",
 ]
-EXP7_START_DATE = "2010-01-01"          # download window start (Sec. 5, data_requirements)
-EXP7_END_DATE = "2024-12-31"            # download window end (Sec. 5, data_requirements)
+EXP7_START_DATE = "2010-01-01"          # download window start (Sec. 5)
+EXP7_END_DATE = "2024-12-31"            # download window end (Sec. 5)
 EXP7_INITIAL_WINDOW = 250               # T0, initial full-SVD window in trading days (Sec. 5)
 EXP7_PRIMARY_RANK = 5                   # primary truncation rank k (Sec. 5)
 EXP7_TIMESERIES_REFRESH = (None, 100, 20)  # no_refresh, refresh_100, refresh_20 (Sec. 5)

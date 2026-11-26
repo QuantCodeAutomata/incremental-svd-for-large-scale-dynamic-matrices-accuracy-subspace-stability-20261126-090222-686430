@@ -197,9 +197,9 @@ same code on the same data matches the paper closely.
 ## Deviations from the paper
 
 - **ETF universe**: the paper references its own ticker list in
-  `experiments/prepare_etf_data.py` of its code repository (Sec. 5,
-  `data_requirements`), which the paper text itself does not print. This
-  file was retrieved from the authors' repository and its 60-ticker universe
+  `experiments/prepare_etf_data.py` of its code repository (Sec. 5), which
+  the paper text itself does not print. This
+  file was obtained from the authors' repository and its 60-ticker universe
   (the same list given in `src/config.py`'s `EXP7_TICKERS`) was used exactly,
   covering broad US equity/style, international equity, US GICS sectors,
   fixed income/credit and commodities/real-asset ETFs. Of these, 11 (QQQ,
@@ -216,8 +216,9 @@ same code on the same data matches the paper closely.
   specifies that `U_true`/`V_true` have random orthonormal columns and gives
   an example singular-value vector `diag(1, 0.8, 0.6, 0.4, 0.2)` for the
   50x40, true-rank-5 matrix (Sec. 4.1), but does not specify the exact
-  singular-value distribution or noise level more precisely (flagged in the
-  task as an open point, confirmed absent from the retrieved paper text).
+  singular-value distribution or noise level more precisely, so the paper's
+  example singular-value vector is used exactly and no additional noise is
+  added to the initial low-rank matrix.
   With orthonormal columns and `S_true = diag(1, 0.8, 0.6, 0.4, 0.2)`, the
   50x40 signal matrix has Frobenius norm `1.483` (verified numerically). A
   pure accumulation of 6,000 random rank-1 entry updates with

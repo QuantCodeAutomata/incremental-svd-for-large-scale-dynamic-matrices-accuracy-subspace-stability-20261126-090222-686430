@@ -1,11 +1,11 @@
 """Accuracy metrics comparing the incremental SVD to a full-SVD oracle.
 
 Custom implementation of the metrics of Staykov (2026), Sec. 2.5 and Sec. 4
-(error ratio eq. 10, principal angle, explained variance ratio). Context7 was
-queried for `scipy.linalg.subspace_angles`; scipy does provide principal
-angles between subspaces, and it is used below instead of a hand-rolled
-arccos(sigma_min) formula for numerical robustness (the two are
-mathematically equivalent for orthonormal bases of equal dimension).
+(error ratio eq. 10, principal angle, explained variance ratio).
+`scipy.linalg.subspace_angles` provides principal angles between subspaces
+and is used below instead of a hand-rolled arccos(sigma_min) formula for
+numerical robustness (the two are mathematically equivalent for orthonormal
+bases of equal dimension).
 """
 
 from __future__ import annotations

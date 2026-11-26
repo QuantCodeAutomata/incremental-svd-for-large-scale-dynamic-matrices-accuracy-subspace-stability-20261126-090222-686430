@@ -3,11 +3,12 @@
 
 Reuses `IncrementalSVD` (row appends) and the refresh policies of
 `src.isvd_policies`; the covariance and portfolio-risk formulas below are a
-custom implementation of eqs. (18)-(22) of the paper (Sec. 5.1-5.2). Context7
-was queried for `pyportfolioopt` covariance estimators (`CovarianceShrinkage`,
-sample covariance); none of them expose an online, rank-truncated covariance
-estimator built from an incrementally maintained SVD, so the low-rank
-covariance below is implemented directly from the paper's definitions.
+custom implementation of eqs. (18)-(22) of the paper (Sec. 5.1-5.2).
+`pyportfolioopt`'s covariance estimators (`CovarianceShrinkage`, sample
+covariance) were considered; none of them expose an online, rank-truncated
+covariance estimator built from an incrementally maintained SVD, so the
+low-rank covariance below is implemented directly from the paper's
+definitions.
 """
 
 from __future__ import annotations
@@ -25,7 +26,7 @@ from src.isvd_policies import should_refresh_bound, should_refresh_periodic
 
 
 def compute_log_returns(prices: pd.DataFrame) -> pd.DataFrame:
-    """r_{t,i} = log(P_{t,i} / P_{t-1,i}) (paper Sec. 5, data_requirements)."""
+    """r_{t,i} = log(P_{t,i} / P_{t-1,i}) (paper Sec. 5)."""
     log_prices = np.log(prices)
     returns = log_prices.diff().dropna(how="any")
     return returns
@@ -47,8 +48,8 @@ def load_price_data_and_returns(
 ) -> Tuple[np.ndarray, pd.DatetimeIndex, List[str]]:
     """Causally de-meaned daily log-return matrix R (T x N) for `tickers`
     over [start_date, end_date], after dropping days with any missing price
-    (paper Sec. 5, data_requirements). No per-asset volatility standardization
-    is applied, per the paper's explicit instruction to work in return units.
+    (paper Sec. 5). No per-asset volatility standardization is applied, since
+    the paper works directly with covariance in return units (Sec. 5).
     """
     prices, meta = load_price_panel(tickers, start_date, end_date, use_cache=use_cache)
     returns = compute_log_returns(prices)

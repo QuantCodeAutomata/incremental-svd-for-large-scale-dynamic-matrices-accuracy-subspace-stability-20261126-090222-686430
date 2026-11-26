@@ -5,11 +5,11 @@ Section 2 of Staykov (2026), "Incremental SVD for Large-Scale Dynamic
 Matrices" (arXiv:2605.24514): rank-1 entry updates, row appends and column
 appends, with the O(1)-per-step a posteriori error bound of Proposition 1.
 
-Context7 was queried for `scipy.sparse.linalg.svds` / incremental PCA
-equivalents (scikit-learn `IncrementalPCA`, `TruncatedSVD`); none of them
-implement rank-1 entry updates, the row/column append core-matrix algebra, or
-the a posteriori error bound of Proposition 1, so the engine below is a
-custom implementation of the paper's algorithm.
+`scipy.sparse.linalg.svds` and scikit-learn's incremental-PCA equivalents
+(`IncrementalPCA`, `TruncatedSVD`) were considered; none of them implement
+rank-1 entry updates, the row/column append core-matrix algebra, or the a
+posteriori error bound of Proposition 1, so the engine below is a custom
+implementation of the paper's algorithm.
 """
 
 from __future__ import annotations
