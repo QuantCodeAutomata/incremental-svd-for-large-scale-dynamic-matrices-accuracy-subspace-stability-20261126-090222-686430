@@ -1,6 +1,6 @@
 # Repository guide
 
-This repository reproduces selected experiments from Staykov, S. (2026),
+This repository reproduces seven experiments from Staykov, S. (2026),
 "Incremental SVD for Large-Scale Dynamic Matrices: Accuracy, Subspace
 Stability, Refresh Strategies, and Financial Factor-Based Risk Models"
 (arXiv:2605.24514): an online, Brand-style rank-1/row-append/column-append

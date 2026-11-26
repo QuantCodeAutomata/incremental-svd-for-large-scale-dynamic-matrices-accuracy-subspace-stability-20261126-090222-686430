@@ -1,6 +1,6 @@
 # Incremental SVD for Large-Scale Dynamic Matrices
 
-Reproduction of selected experiments from Staykov, S. (2026), "Incremental
+Reproduction of seven experiments from Staykov, S. (2026), "Incremental
 SVD for Large-Scale Dynamic Matrices: Accuracy, Subspace Stability, Refresh
 Strategies, and Financial Factor-Based Risk Models" (arXiv:2605.24514).
 
