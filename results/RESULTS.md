@@ -188,11 +188,19 @@ portfolio risk errors are **partially reproduced**: the paper's qualitative
 ordering (no_refresh > refresh_100 > refresh_20, with refresh_20 reducing
 error by one to two orders of magnitude) holds in every run, and the
 refresh_100 and refresh_20 values are within 20-33% of the paper, but the
-no_refresh value is **not reproduced** (69% higher than the paper's 3.8e-2),
-most likely reflecting the 10 independently-drawn random long-short
-portfolios (not specified by the paper to be fixed or redrawn across
-replications) rather than a defect, since every other metric computed by the
-same code on the same data matches the paper closely.
+no_refresh value is **not reproduced** (69% higher than the paper's 3.8e-2).
+This was localized with a sensitivity check on synthetic data: the same
+`run_finance_stream` code run on a synthetic 1,644 x 60 rank-6-plus-noise
+panel (matching Experiment 7's dimensions) with 8 different values of the
+10-random-portfolio draw seed produces a final no_refresh
+`risk_rel_err_rand_mean` ranging from 0.088 to 0.257 (max/min ratio 2.91,
+coefficient of variation 0.32) -- a spread comfortably larger than the 1.69x
+gap to the paper's value. Since the paper does not state whether its 10
+random long-short portfolios are fixed across runs or how they were drawn,
+this confirms that the choice of random-portfolio seed alone, with no change
+to the engine or the covariance/risk formulas, can produce a gap of this
+size, rather than a defect, since every other metric computed by the same
+code on the same data matches the paper closely.
 
 ## Deviations from the paper
 
