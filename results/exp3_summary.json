@@ -1,0 +1,38 @@
+[
+  {
+    "stream": "col",
+    "policy": "no_refresh",
+    "final_frob_ratio": 1.0332821885755914,
+    "mean_frob_ratio": 1.0620631948038228,
+    "max_frob_ratio": 1.1970544045679044,
+    "final_angle_to_opt": 1.092974792587182,
+    "n_appends": 200
+  },
+  {
+    "stream": "col",
+    "policy": "refresh_50",
+    "final_frob_ratio": 1.0,
+    "mean_frob_ratio": 1.0348851178606382,
+    "max_frob_ratio": 1.1970544045679044,
+    "final_angle_to_opt": 3.5895006960133695e-16,
+    "n_appends": 200
+  },
+  {
+    "stream": "row",
+    "policy": "no_refresh",
+    "final_frob_ratio": 1.0928295113009343,
+    "mean_frob_ratio": 1.096961674185604,
+    "max_frob_ratio": 1.184066717815506,
+    "final_angle_to_opt": 1.5630071751450647,
+    "n_appends": 200
+  },
+  {
+    "stream": "row",
+    "policy": "refresh_50",
+    "final_frob_ratio": 1.0,
+    "mean_frob_ratio": 1.0334012899371003,
+    "max_frob_ratio": 1.1668660564021927,
+    "final_angle_to_opt": 4.390906547102571e-16,
+    "n_appends": 200
+  }
+]
