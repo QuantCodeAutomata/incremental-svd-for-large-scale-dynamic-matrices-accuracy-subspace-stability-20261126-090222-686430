@@ -18,14 +18,45 @@ def make_rng(seed: int) -> np.random.Generator:
     return np.random.default_rng(seed)
 
 
+def _random_orthonormal_columns(rng: np.random.Generator, dim: int, rank: int) -> np.ndarray:
+    """`rank` random orthonormal columns in R^dim, via QR of a standard
+    Gaussian matrix (paper Sec. 4.1 methodology: "U_true, V_true with random
+    orthonormal columns")."""
+    Q, R = np.linalg.qr(rng.standard_normal((dim, rank)))
+    # Fix the sign ambiguity of QR so columns point in a consistent direction.
+    signs = np.sign(np.diag(R))
+    signs[signs == 0] = 1.0
+    return Q * signs
+
+
+def default_singular_values(true_rank: int) -> np.ndarray:
+    """Singular-value spectrum S_true: for true_rank=5 this is exactly
+    diag(1, 0.8, 0.6, 0.4, 0.2), the spectrum given in the experiment
+    methodology (paper Sec. 4.1). For other ranks (Sec. 4.3, true_rank=6),
+    the same linear decay from 1.0 to 0.2 is used, since the paper does not
+    specify a spectrum for that rank."""
+    if true_rank == 1:
+        return np.array([1.0])
+    return np.linspace(1.0, 0.2, true_rank)
+
+
 def low_rank_matrix(
-    rng: np.random.Generator, m: int, n: int, true_rank: int
+    rng: np.random.Generator,
+    m: int,
+    n: int,
+    true_rank: int,
+    singular_values: Optional[np.ndarray] = None,
 ) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
-    """A = U_true @ V_true.T with iid standard-normal factors (paper Sec.
-    4.1: "a 50x40 matrix of true rank 5"). Returns (A, U_true, V_true)."""
-    U_true = rng.standard_normal((m, true_rank))
-    V_true = rng.standard_normal((n, true_rank))
-    A = U_true @ V_true.T
+    """A = U_true @ diag(S_true) @ V_true.T, with U_true in R^{m x true_rank}
+    and V_true in R^{n x true_rank} having random orthonormal columns and
+    S_true = diag(1, 0.8, 0.6, 0.4, 0.2) for true_rank=5 (paper Sec. 4.1
+    methodology, step 1). Returns (A, U_true, V_true)."""
+    S_true = default_singular_values(true_rank) if singular_values is None else np.asarray(
+        singular_values, dtype=float
+    )
+    U_true = _random_orthonormal_columns(rng, m, true_rank)
+    V_true = _random_orthonormal_columns(rng, n, true_rank)
+    A = (U_true * S_true) @ V_true.T
     return A, U_true, V_true
 
 
