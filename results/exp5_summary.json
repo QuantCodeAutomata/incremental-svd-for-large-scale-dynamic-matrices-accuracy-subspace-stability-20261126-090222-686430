@@ -1,0 +1,68 @@
+{
+  "policies": [
+    {
+      "policy": "no_refresh",
+      "mean_frob_ratio": 1.1748060659267916,
+      "max_frob_ratio": 1.2148838063612286,
+      "max_frob_ratio_second_half": 1.2148838063612286,
+      "mean_angle_to_opt": 1.4291502251329442,
+      "max_angle_to_opt": 1.5707832677739475,
+      "median_beta_over_E_inc": 56.26210950631342,
+      "mean_n_full_svds": 1.0
+    },
+    {
+      "policy": "refresh_1000",
+      "mean_frob_ratio": 1.0355482737972999,
+      "max_frob_ratio": 1.1875669306208203,
+      "max_frob_ratio_second_half": 1.040070774923668,
+      "mean_angle_to_opt": 0.7408753969481753,
+      "max_angle_to_opt": 1.5702361694383693,
+      "median_beta_over_E_inc": 7.777117404764162,
+      "mean_n_full_svds": 11.0
+    },
+    {
+      "policy": "bound_tau_0.4",
+      "mean_frob_ratio": 1.0000064834036153,
+      "max_frob_ratio": 1.0470933478136157,
+      "max_frob_ratio_second_half": 1.0,
+      "mean_angle_to_opt": 4.943816654092024e-05,
+      "max_angle_to_opt": 0.17152303948972183,
+      "median_beta_over_E_inc": 1.0,
+      "mean_n_full_svds": 9822.4
+    },
+    {
+      "policy": "bound_tau_0.2",
+      "mean_frob_ratio": 1.000001537246438,
+      "max_frob_ratio": 1.025810443269486,
+      "max_frob_ratio_second_half": 1.0,
+      "mean_angle_to_opt": 6.293439150881136e-06,
+      "max_angle_to_opt": 0.0799573267385069,
+      "median_beta_over_E_inc": 1.0,
+      "mean_n_full_svds": 9962.8
+    },
+    {
+      "policy": "bound_tau_0.1",
+      "mean_frob_ratio": 1.0,
+      "max_frob_ratio": 1.0,
+      "max_frob_ratio_second_half": 1.0,
+      "mean_angle_to_opt": 6.4442402930763975e-16,
+      "max_angle_to_opt": 2.095608277209755e-15,
+      "median_beta_over_E_inc": 1.0,
+      "mean_n_full_svds": 9994.0
+    },
+    {
+      "policy": "bound_tau_0.05",
+      "mean_frob_ratio": 1.0,
+      "max_frob_ratio": 1.0,
+      "max_frob_ratio_second_half": 1.0,
+      "mean_angle_to_opt": 6.444693768739621e-16,
+      "max_angle_to_opt": 2.095608277209755e-15,
+      "median_beta_over_E_inc": 1.0,
+      "mean_n_full_svds": 9999.2
+    }
+  ],
+  "bound_check": {
+    "max_bound_violation": 0.0,
+    "bound_holds_up_to_roundoff": true
+  }
+}
