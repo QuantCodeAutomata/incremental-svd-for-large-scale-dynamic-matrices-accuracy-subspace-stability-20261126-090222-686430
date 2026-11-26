@@ -1,45 +1,40 @@
 {
   "n_trading_days": 1644,
-  "n_tickers": 64,
+  "n_tickers": 60,
   "date_range": [
     "2018-06-20",
     "2024-12-31"
   ],
   "non_massive_source": {
-    "VOO": "yahoo",
-    "DIA": "yahoo",
     "QQQ": "yahoo",
-    "MDY": "yahoo",
+    "DIA": "yahoo",
     "EWJ": "yahoo",
-    "MTUM": "yahoo",
-    "VLUE": "yahoo",
+    "EWU": "yahoo",
     "XLRE": "yahoo",
     "BND": "yahoo",
     "JNK": "yahoo",
-    "UNG": "yahoo",
+    "GDX": "yahoo",
+    "GDXJ": "yahoo",
     "DBC": "yahoo",
-    "PDBC": "yahoo",
-    "SPLV": "yahoo",
-    "USMV": "yahoo",
     "SMH": "yahoo"
   },
   "failed_tickers": {},
   "primary_summaries": {
     "no_refresh": {
-      "mean_update_time": 0.00020919568579403773,
-      "total_update_time": 0.2916187859968886,
+      "mean_update_time": 0.0002049447295557833,
+      "total_update_time": 0.2856929530007619,
       "n_stream_events": 1394.0,
       "n_refreshes": 0.0
     },
     "refresh_100": {
-      "mean_update_time": 0.0002392253880957619,
-      "total_update_time": 0.3334801910054921,
+      "mean_update_time": 0.0002322823307078326,
+      "total_update_time": 0.32380156900671864,
       "n_stream_events": 1394.0,
       "n_refreshes": 13.0
     },
     "refresh_20": {
-      "mean_update_time": 0.00044748370300676287,
-      "total_update_time": 0.6237922819914274,
+      "mean_update_time": 0.00035715534075637256,
+      "total_update_time": 0.49787454501438333,
       "n_stream_events": 1394.0,
       "n_refreshes": 69.0
     }
@@ -48,83 +43,83 @@
     {
       "k": 5,
       "tau": 0.5,
-      "final_angle": 0.0019501951789045685,
-      "final_cov_rel_error": 0.00017961614397468779,
-      "final_risk_rel_err_eq": 3.6691773976206926e-06,
-      "mean_update_time_s": 0.0007259750473493732,
-      "n_full_svds": 180.0
+      "final_angle": 0.0016893824993531236,
+      "final_cov_rel_error": 0.00012471841477699517,
+      "final_risk_rel_err_eq": 2.0591253983903362e-07,
+      "mean_update_time_s": 0.0006401181822151677,
+      "n_full_svds": 197.0
     },
     {
       "k": 5,
       "tau": 0.6,
-      "final_angle": 0.001078303635115366,
-      "final_cov_rel_error": 0.00012342154798926589,
-      "final_risk_rel_err_eq": 9.047053353115491e-07,
-      "mean_update_time_s": 0.0004478572446150975,
-      "n_full_svds": 93.0
+      "final_angle": 0.0011148868452537388,
+      "final_cov_rel_error": 8.510652855604729e-05,
+      "final_risk_rel_err_eq": 6.338243324202697e-07,
+      "mean_update_time_s": 0.0004322098235119369,
+      "n_full_svds": 97.0
     },
     {
       "k": 5,
       "tau": 0.7,
-      "final_angle": 0.03287896446882232,
-      "final_cov_rel_error": 0.0026546348811032393,
-      "final_risk_rel_err_eq": 5.9044024052109404e-05,
-      "mean_update_time_s": 0.00037699326684556306,
-      "n_full_svds": 63.0
+      "final_angle": 0.017570433920089033,
+      "final_cov_rel_error": 0.0012905499561217777,
+      "final_risk_rel_err_eq": 1.2470024952481925e-05,
+      "mean_update_time_s": 0.0003364884870909891,
+      "n_full_svds": 64.0
     },
     {
       "k": 8,
       "tau": 0.5,
-      "final_angle": 0.009467714214329136,
-      "final_cov_rel_error": 0.000437532911951625,
-      "final_risk_rel_err_eq": 4.871143980954338e-07,
-      "mean_update_time_s": 0.000432949847908285,
-      "n_full_svds": 73.0
+      "final_angle": 0.01745341433904212,
+      "final_cov_rel_error": 0.0006565002834176396,
+      "final_risk_rel_err_eq": 5.435209086296406e-06,
+      "mean_update_time_s": 0.0006487661126235119,
+      "n_full_svds": 91.0
     },
     {
       "k": 8,
       "tau": 0.6,
-      "final_angle": 0.03905252975280086,
-      "final_cov_rel_error": 0.001685654998998442,
-      "final_risk_rel_err_eq": 4.6027450023409386e-07,
-      "mean_update_time_s": 0.00046001563773669384,
-      "n_full_svds": 49.0
+      "final_angle": 0.022945614192277343,
+      "final_cov_rel_error": 0.0008290995881352061,
+      "final_risk_rel_err_eq": 1.085603398914148e-05,
+      "mean_update_time_s": 0.00042007783140642963,
+      "n_full_svds": 58.0
     },
     {
       "k": 8,
       "tau": 0.7,
-      "final_angle": 0.05156076531019813,
-      "final_cov_rel_error": 0.0022162696807368444,
-      "final_risk_rel_err_eq": 2.2390701939657413e-06,
-      "mean_update_time_s": 0.00039756193758800495,
-      "n_full_svds": 37.0
+      "final_angle": 8.612079013524963e-16,
+      "final_cov_rel_error": 0.0,
+      "final_risk_rel_err_eq": 0.0,
+      "mean_update_time_s": 0.00044414147920150243,
+      "n_full_svds": 43.0
     },
     {
       "k": 12,
       "tau": 0.5,
-      "final_angle": 0.02053532609795623,
-      "final_cov_rel_error": 0.00046590411498695583,
-      "final_risk_rel_err_eq": 4.573580129836975e-06,
-      "mean_update_time_s": 0.0012647184332841865,
-      "n_full_svds": 39.0
+      "final_angle": 0.023233948971602584,
+      "final_cov_rel_error": 0.0004998248525981617,
+      "final_risk_rel_err_eq": 2.1057661161688176e-06,
+      "mean_update_time_s": 0.0010520217761902054,
+      "n_full_svds": 53.0
     },
     {
       "k": 12,
       "tau": 0.6,
-      "final_angle": 0.02002879241152721,
-      "final_cov_rel_error": 0.00045058459538224776,
-      "final_risk_rel_err_eq": 4.472748797773794e-06,
-      "mean_update_time_s": 0.0008273586843612323,
+      "final_angle": 0.011192001953492976,
+      "final_cov_rel_error": 0.00022323474480565047,
+      "final_risk_rel_err_eq": 1.3438315036235412e-06,
+      "mean_update_time_s": 0.0006791266090400245,
+      "n_full_svds": 38.0
+    },
+    {
+      "k": 12,
+      "tau": 0.7,
+      "final_angle": 0.06240817139379512,
+      "final_cov_rel_error": 0.0014199883917170965,
+      "final_risk_rel_err_eq": 1.074743660250184e-05,
+      "mean_update_time_s": 0.0006785629067559668,
       "n_full_svds": 29.0
-    },
-    {
-      "k": 12,
-      "tau": 0.7,
-      "final_angle": 0.0468268923596316,
-      "final_cov_rel_error": 0.0009953089107268226,
-      "final_risk_rel_err_eq": 3.908429642691766e-06,
-      "mean_update_time_s": 0.0007320092883792822,
-      "n_full_svds": 23.0
     }
   ]
 }

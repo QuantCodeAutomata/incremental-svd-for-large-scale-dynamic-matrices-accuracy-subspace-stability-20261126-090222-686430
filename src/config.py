@@ -95,20 +95,18 @@ EXP6_TIMING_RUNS = 5                    # median over 5 runs (Sec. 4.2/4.6)
 # authors' data-preparation script experiments/prepare_etf_data.py (the paper
 # text does not print the ticker list, Sec. 5, data_requirements).
 EXP7_TICKERS = [
-    # Broad equity indices
-    "SPY", "IVV", "VOO", "VTI", "DIA", "QQQ", "IWM", "MDY",
-    # Regions / international
-    "EFA", "EEM", "VWO", "VEA", "VGK", "EWJ", "FXI", "EWZ",
-    # Style
-    "IWF", "IWD", "IWO", "IWN", "MTUM", "VLUE",
-    # GICS sector SPDRs
-    "XLK", "XLF", "XLE", "XLV", "XLY", "XLP", "XLI", "XLB", "XLU", "XLRE", "XLC",
-    # Rates and credit
-    "TLT", "IEF", "SHY", "AGG", "BND", "LQD", "HYG", "JNK", "TIP", "MUB", "EMB",
-    # Commodities and real assets
-    "GLD", "SLV", "USO", "UNG", "DBC", "GSG", "PDBC", "VNQ", "IYR",
-    # Additional broad / factor / volatility proxies to complete the 60-name panel
-    "VB", "VO", "VUG", "VTV", "SCHD", "SPLV", "USMV", "XBI", "SMH", "ITB", "KRE",
+    # Broad US equity / style (authors' experiments/prepare_etf_data.py)
+    "SPY", "IVV", "VTI", "QQQ", "DIA", "IWM", "IWN", "IWO", "VTV", "VUG",
+    # International / regional equity
+    "VEA", "VWO", "EFA", "EEM", "EWJ", "EWU", "EWG", "EWQ", "EWL", "EWA",
+    "EWC", "EWH", "EWY", "EWZ", "EWW", "EWD",
+    # US sector ETFs (GICS sectors)
+    "XLF", "XLK", "XLE", "XLY", "XLP", "XLV", "XLI", "XLB", "XLRE", "XLU", "XLC",
+    # Fixed income / rates / credit
+    "TLT", "IEF", "SHY", "BND", "AGG", "LQD", "HYG", "JNK", "TIP", "EMB",
+    # Commodities / real assets / thematics
+    "GLD", "SLV", "GDX", "GDXJ", "USO", "DBC", "DBA", "VNQ", "IYR", "XME",
+    "XOP", "KRE", "SMH",
 ]
 EXP7_START_DATE = "2010-01-01"          # download window start (Sec. 5, data_requirements)
 EXP7_END_DATE = "2024-12-31"            # download window end (Sec. 5, data_requirements)
