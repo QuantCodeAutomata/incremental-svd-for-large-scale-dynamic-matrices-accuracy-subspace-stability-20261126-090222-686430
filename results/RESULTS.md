@@ -203,14 +203,19 @@ paper closely.
   50x40, true-rank-5 matrix (Sec. 4.1), but does not specify the exact
   singular-value distribution or noise level more precisely (flagged in the
   task as an open point, confirmed absent from the retrieved paper text).
-  With orthonormal columns, matrix entries have magnitude of order
-  `1/sqrt(m*n) ~ 0.02`, substantially smaller than the rank-1 update
-  increment `delta ~ N(0, 0.05^2)`; after several thousand updates the
-  accumulated per-entry noise is comparable to or larger than the original
-  signal. This makes the smallest singular-value gaps of the true model
-  numerically weak relative to the noise floor, which by the
-  Davis-Kahan-type sensitivity of singular *vectors* to singular-value gaps
-  causes the angle-to-optimal-subspace metric (which depends on eigenvectors)
+  With orthonormal columns and `S_true = diag(1, 0.8, 0.6, 0.4, 0.2)`, the
+  50x40 signal matrix has Frobenius norm `1.483` (verified numerically). A
+  pure accumulation of 6,000 random rank-1 entry updates with
+  `delta ~ N(0, 0.05^2)` (the Experiment 2 stream length, with no signal)
+  reaches Frobenius norm `3.795` and its own leading singular values
+  (`1.08, 1.05, 1.01, 0.97, 0.92`, verified numerically) are of the same
+  order as, or larger than, the signal's (`1.0, 0.8, 0.6, 0.4, 0.2`). After
+  this many updates the accumulated noise therefore dominates the original
+  low-rank signal in Frobenius energy by a factor of about 2.6, which makes
+  the smallest singular-value gaps of the true model numerically weak
+  relative to the noise floor. By the
+  Davis-Kahan-type sensitivity of singular *vectors* to singular-value gaps,
+  this causes the angle-to-optimal-subspace metric (which depends on eigenvectors)
   to diverge much more from the paper's reported values than the
   Frobenius-error-ratio metric (which depends only on eigenvalues and is
   numerically stable under the same perturbation). This was localized by (i)
